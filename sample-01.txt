@@ -1,0 +1,2 @@
+Feature: Saved searches
+Users should be able to save frequently used searches and return to them from a dedicated list. Include a clear name, the original filters, and the date last used.

@@ -1,0 +1,2 @@
+Release idea: Keyboard shortcuts
+Introduce shortcuts for opening search, creating a new record, and moving between primary sections. Include a shortcut reference panel and ensure shortcuts do not interfere with text input.

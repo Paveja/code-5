@@ -1,0 +1,2 @@
+Feature: Bulk editing
+Add multi-select actions to list views so users can update statuses, owners, or tags without opening each record individually. Confirm destructive changes before applying them.

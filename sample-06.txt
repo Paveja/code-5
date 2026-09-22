@@ -1,0 +1,2 @@
+Release idea: Export center
+Create a central place for requested exports with progress, completion time, expiration, and download status. Keep large exports asynchronous so the main workspace remains responsive.

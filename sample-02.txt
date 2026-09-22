@@ -1,0 +1,2 @@
+Feedback: Faster onboarding
+New users understand the product more quickly when the setup flow shows only the next required action. Consider reducing optional fields and adding progress guidance.

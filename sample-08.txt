@@ -1,0 +1,2 @@
+Feedback: Notification controls
+Users want control over which updates interrupt them. Group notification preferences by event type and distinguish immediate alerts from scheduled summaries.

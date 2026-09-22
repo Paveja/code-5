@@ -1,0 +1,2 @@
+Release idea: Weekly digest
+Send a weekly summary of meaningful account activity, unresolved items, and recommended next steps. Users should be able to change the delivery day or opt out.

@@ -1,0 +1,2 @@
+Feedback: Empty states
+Several screens feel unfinished when no data exists. Replace blank panels with concise explanations, a primary action, and an example that shows what will appear after setup.

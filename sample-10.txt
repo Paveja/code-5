@@ -1,0 +1,2 @@
+Feature: Shared views
+Let teams publish filtered views for common workflows. Owners should be able to update or archive a shared view while preserving a clear indicator of who manages it.

@@ -1,0 +1,2 @@
+Feature: Activity timeline
+Show a chronological timeline of important changes, including the actor, timestamp, affected field, and previous value when available. Allow filtering by activity type.
