@@ -36,8 +36,7 @@ body {
   margin: 0;
   background:
     radial-gradient(circle at 12% 10%, rgba(215, 90, 74, 0.1), transparent 28rem),
-    radial-gradient(circle at 88% 92%, rgba(23, 123, 118, 0.1), transparent 30rem),
-    var(--paper);
+    radial-gradient(circle at 88% 92%, rgba(23, 123, 118, 0.1), transparent 30rem), var(--paper);
   color: var(--ink);
   font-family: var(--font-geist-sans), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

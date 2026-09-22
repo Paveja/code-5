@@ -16,14 +16,10 @@ const WINNING_LINES = [
   [2, 4, 6],
 ] as const;
 
-function getWinningLine(board: Cell[]): readonly number[] | null {
+function getWinningLine(board: Cell[]): (typeof WINNING_LINES)[number] | null {
   return (
     WINNING_LINES.find(([first, second, third]) => {
-      return (
-        board[first] &&
-        board[first] === board[second] &&
-        board[first] === board[third]
-      );
+      return board[first] && board[first] === board[second] && board[first] === board[third];
     }) ?? null
   );
 }
@@ -100,7 +96,8 @@ export default function Home() {
           <div className="board-wrap">
             <div className="board" role="grid" aria-label="Tic tac toe board">
               {board.map((cell, index) => {
-                const isWinningCell = winningLine?.includes(index) ?? false;
+                const isWinningCell =
+                  winningLine?.some((winningIndex) => winningIndex === index) ?? false;
 
                 return (
                   <button
@@ -110,8 +107,9 @@ export default function Home() {
                     key={index}
                     type="button"
                     role="gridcell"
-                    aria-label={cell ? `Square ${index + 1}: ${cell}` : `Square ${index + 1}: empty`}
-                    aria-pressed={Boolean(cell)}
+                    aria-label={
+                      cell ? `Square ${index + 1}: ${cell}` : `Square ${index + 1}: empty`
+                    }
                     disabled={Boolean(cell) || isComplete}
                     onClick={() => handleMove(index)}
                   >
