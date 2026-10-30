@@ -1,0 +1,294 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light;
+  --paper: #f4f0e7;
+  --paper-bright: #fffdf7;
+  --ink: #2d2a26;
+  --ink-soft: #6d665d;
+  --line: #e6dfd2;
+  --key: #f2eee5;
+  --key-hover: #e9e2d6;
+  --accent: #b74427;
+  --accent-hover: #98391f;
+  --accent-wash: #f8e8df;
+  --accent-active: #f0d5c8;
+  --accent-outline: rgb(183 68 39 / 20%);
+  --accent-on: #fffaf4;
+  --error: #9e3323;
+  --focus: #71301f;
+  --panel-outline: rgb(92 72 47 / 8%);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --type-xs: 0.75rem;
+  --type-sm: 0.875rem;
+  --type-base: 1rem;
+  --type-intro: 0.96rem;
+  --type-expression: 0.9rem;
+  --type-heading: clamp(1.8rem, 5vw, 2.35rem);
+  --type-display: clamp(2.4rem, 10vw, 4.2rem);
+  --type-display-small: clamp(1.6rem, 7vw, 3rem);
+  --type-key: 1.25rem;
+  --type-key-small: 1.05rem;
+  --type-key-large: 1.5rem;
+  --radius-control: 1rem;
+  --radius-panel: 1.75rem;
+  --shadow-panel: 0 24px 64px rgb(58 43 26 / 9%), 0 3px 12px rgb(58 43 26 / 5%);
+  --motion-quick: 120ms ease-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.page-shell {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) var(--space-4);
+}
+
+.page-intro {
+  width: min(100%, 27rem);
+  margin-bottom: var(--space-5);
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--accent);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.page-intro h1 {
+  margin: 0;
+  font-size: var(--type-heading);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+}
+
+.intro-copy {
+  margin: var(--space-2) 0 0;
+  color: var(--ink-soft);
+  font-size: var(--type-intro);
+  line-height: 1.5;
+}
+
+.calculator {
+  width: min(100%, 27rem);
+  padding: var(--space-5);
+  border: 1px solid var(--panel-outline);
+  border-radius: var(--radius-panel);
+  background: var(--paper-bright);
+  box-shadow: var(--shadow-panel);
+}
+
+.calculator-screen {
+  display: flex;
+  min-height: 9rem;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: var(--space-4) var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+}
+
+.calculator-expression {
+  min-height: 1.5rem;
+  max-width: 100%;
+  margin: 0 0 var(--space-2);
+  overflow-wrap: anywhere;
+  color: var(--ink-soft);
+  font-size: var(--type-expression);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.015em;
+}
+
+.calculator-display {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: var(--type-display);
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 1.1;
+}
+
+.calculator-display.is-long {
+  font-size: var(--type-display-small);
+}
+
+.calculator-error {
+  align-self: stretch;
+  margin: var(--space-3) 0 0;
+  color: var(--error);
+  font-size: var(--type-sm);
+  line-height: 1.45;
+  text-align: left;
+}
+
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+}
+
+.calculator-key {
+  min-width: 0;
+  min-height: 3.8rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: var(--key);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: var(--type-key);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  line-height: 1;
+  touch-action: manipulation;
+  transition:
+    background-color var(--motion-quick),
+    border-color var(--motion-quick),
+    color var(--motion-quick),
+    transform var(--motion-quick);
+  user-select: none;
+}
+
+.calculator-key:hover {
+  background: var(--key-hover);
+}
+
+.calculator-key:active {
+  transform: scale(0.97);
+}
+
+.calculator-key.utility {
+  color: var(--ink-soft);
+  font-size: var(--type-key-small);
+}
+
+.calculator-key.operator {
+  background: var(--accent-wash);
+  color: var(--accent);
+  font-size: var(--type-key-large);
+}
+
+.calculator-key.operator:hover,
+.calculator-key.operator[aria-pressed='true'] {
+  border-color: var(--accent-outline);
+  background: var(--accent-active);
+}
+
+.calculator-key.equals {
+  background: var(--accent);
+  color: var(--accent-on);
+  font-size: var(--type-key-large);
+}
+
+.calculator-key.equals:hover {
+  background: var(--accent-hover);
+}
+
+.calculator-key.zero {
+  grid-column: span 2;
+}
+
+.keyboard-hint {
+  display: flex;
+  width: min(100%, 27rem);
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin: var(--space-4) 0 0;
+  color: var(--ink-soft);
+  font-size: var(--type-xs);
+  line-height: 1.5;
+}
+
+.keyboard-hint span:first-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+@media (max-width: 420px) {
+  :root {
+    --type-display-compact: clamp(1.8rem, 10vw, 4.2rem);
+  }
+
+  .page-shell {
+    justify-content: flex-start;
+    padding: var(--space-6) var(--space-3);
+  }
+
+  .calculator {
+    padding: var(--space-4);
+  }
+
+  .calculator-screen {
+    min-height: 8rem;
+  }
+
+  .calculator-display {
+    font-size: var(--type-display-compact);
+  }
+
+  .calculator-key {
+    min-height: 3.5rem;
+  }
+
+  .keyboard-hint {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+}
+
+@media (max-width: 319px) {
+  body {
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
