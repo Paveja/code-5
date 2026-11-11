@@ -5,10 +5,10 @@
 ▲ Next.js 16.4.5 (Turbopack)
 - Local:         http://localhost:4173
 - Network:       http://0.0.0.0:4173
-✓ Ready in 249ms
-✓ Running next.config.ts took 23ms
+✓ Ready in 250ms
+✓ Running next.config.ts took 20ms
 
- GET / 200 in 231ms (next.js: 132ms, application-code: 99ms)
+ GET / 200 in 231ms (next.js: 133ms, application-code: 99ms)
 [browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
@@ -44,3 +44,4 @@ https://react.dev/link/hydration-mismatch
                         >
                   ...
  
+[?25h
