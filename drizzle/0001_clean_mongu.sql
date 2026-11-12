@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `email_deliveries_booking_id_unique` ON `email_deliveries` (`booking_id`);

@@ -1,0 +1,20 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+.DS_Store
+*.log
+
+# Crash artifacts can contain process memory and exceed repository limits
+core
+core.*
+*.heapsnapshot
+report.*.json
+isolate-*.log
